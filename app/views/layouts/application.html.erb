@@ -14,12 +14,22 @@
 </div>
 <div id="columns">
 <div id="side">
+
+<div id="cart">
+<%= render @cart %>
+</div>
+
 <ul>
 <li><a href="http://www....">Home</a></li>
 <li><a href="http://www..../faq">Questions</a></li>
 <li><a href="http://www..../news">News</a></li>
 <li><a href="http://www..../contact">Contact</a></li>
 </ul>
+
+<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+<%= render @cart %>
+<% end %>
+
 </div>
 <div id="main">
 <%= yield %>
