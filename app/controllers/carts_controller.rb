@@ -5,7 +5,7 @@ class CartsController < ApplicationController
  # rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # GET /carts
   # GET /carts.json
-  def index
+   def index
     @carts = Cart.all
   end
 

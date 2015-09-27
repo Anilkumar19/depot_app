@@ -8,12 +8,11 @@ post 'login' => :create
 delete 'logout' => :destroy
 end
 
-  get 'sessions/create'
+  get 'sessions/create', as: 'test'
 
   get 'sessions/destroy'
 
   resources :users
-
   resources :orders
 
   resources :line_items
@@ -23,6 +22,7 @@ end
   get 'store/index'
 
   resources :products
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -39,6 +39,14 @@ end
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 root 'store#index', as: 'store'
+
+# scope '(:locale)' do
+#    resources :orders
+#    resources :line_items
+#    resources :carts
+#    root 'store#index', as: 'store', via: :all
+# end
+
 
   # Example resource route with options:
   #   resources :products do
